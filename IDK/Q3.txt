@@ -1,0 +1,19 @@
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ touch OS.c
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ nano OS.c 
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ g++ OS.c 
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ ./a.out
+I love Operating Systemsrafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ nano Linux.c
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ g++ Linux.c 
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ ./a.out
+I love Linux
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ g++ OS.c ; g++ Linux.c  
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ ./a.out
+I love Linuxrafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ g++ OS.c ; rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ ./a.out ; ./a.out
+I love LinuxI love Linuxrafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ gcc -o OS.c 
+gcc: fatal error: no input files
+compilation terminated.
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ gcc -o OS OS.c
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ gcc -o Linux Linux.c
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ ./OS ; ./Linux 
+I love Operating SystemsI love Linuxrafay@rafay-HP-EliteBook-rrrrararafrrafrrrrrrrrafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ 
+

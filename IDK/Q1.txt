@@ -1,0 +1,79 @@
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ addgroup OSLAB02
+addgroup: Only root may add a user or group to the system.
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ sudo !!
+sudo addgroup OSLAB02
+[sudo] password for rafay: 
+addgroup: Please enter a username matching the regular expression configured
+via the NAME_REGEX[_SYSTEM] configuration variable.  Use the `--force-badname'
+option to relax this check or reconfigure NAME_REGEX.
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ addgroup OSLAB
+addgroup: Only root may add a user or group to the system.
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ sudo !!
+sudo addgroup OSLAB
+addgroup: Please enter a username matching the regular expression configured
+via the NAME_REGEX[_SYSTEM] configuration variable.  Use the `--force-badname'
+option to relax this check or reconfigure NAME_REGEX.
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ sudo addgroup --force-badname OSLAB02
+Allowing use of questionable username.
+Adding group `OSLAB02' (GID 1001) ...
+Done.
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ sudo adduser OSUser1 OSLAB02
+adduser: The user `OSUser1' does not exist.
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ sudo adduser --ingroup OSLAB02
+adduser: Only one or two names allowed.
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ sudo adduser OSUser1
+adduser: Please enter a username matching the regular expression configured
+via the NAME_REGEX[_SYSTEM] configuration variable.  Use the `--force-badname'
+option to relax this check or reconfigure NAME_REGEX.
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ sudo adduser --force-badname OSUser1
+Allowing use of questionable username.
+Adding user `OSUser1' ...
+Adding new group `OSUser1' (1002) ...
+Adding new user `OSUser1' (1001) with group `OSUser1' ...
+Creating home directory `/home/OSUser1' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+Changing the user information for OSUser1
+Enter the new value, or press ENTER for the default
+	Full Name []: Talha
+	Room Number []: 2342
+	Work Phone []: 2534235
+	Home Phone []: 2342354
+	Other []: 234454
+Is the information correct? [Y/n] y
+
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ useradd -G OSLAB02 OSUser1
+useradd: user 'OSUser1' already exists
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ deluser OSUser1
+/usr/sbin/deluser: Only root may remove a user or group from the system.
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ sudo !!
+sudo deluser OSUser1
+Removing user `OSUser1' ...
+Warning: group `OSUser1' has no more members.
+Done.
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ useradd -G OSLAB02 OSUser1
+useradd: Permission denied.
+useradd: cannot lock /etc/passwd; try again later.
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ sudo !!
+sudo useradd -G OSLAB02 OSUser1
+rafay@rafay-HP-EliteBook-Folio-9470m:~$ cd ..
+rafay@rafay-HP-EliteBook-Folio-9470m:/home$ cd ..
+rafay@rafay-HP-EliteBook-Folio-9470m:/$ ls
+bin    dev   initrd.img      lib64       mnt   root  snap  tmp  vmlinuz
+boot   etc   initrd.img.old  lost+found  opt   run   srv   usr  vmlinuz.old
+cdrom  home  lib             media       proc  sbin  sys   var
+rafay@rafay-HP-EliteBook-Folio-9470m:/$ cd home
+rafay@rafay-HP-EliteBook-Folio-9470m:/home$ ls
+OSLAB02  OSUser1  rafay
+rafay@rafay-HP-EliteBook-Folio-9470m:/home$ sudo useradd -G OSLAB02 OSUser2
+rafay@rafay-HP-EliteBook-Folio-9470m:/home$ 
+rafay@rafay-HP-EliteBook-Folio-9470m:/home$ usermod -a -G sudo OSUser1
+usermod: Permission denied.
+usermod: cannot lock /etc/passwd; try again later.
+rafay@rafay-HP-EliteBook-Folio-9470m:/home$ sudo !!
+sudo usermod -a -G sudo OSUser1
+rafay@rafay-HP-EliteBook-Folio-9470m:/home$ su - OSUser2
+Password: 
+

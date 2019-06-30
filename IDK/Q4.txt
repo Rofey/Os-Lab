@@ -1,0 +1,458 @@
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ useradd abc
+useradd: Permission denied.
+useradd: cannot lock /etc/passwd; try again later.
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ sudo !!
+sudo useradd abc
+[sudo] password for rafay: 
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q3$ cd ..
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab$ mkdir Q4 ; touch file1.txt
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab$ mv file1.txt /Q4
+mv: cannot move 'file1.txt' to '/Q4': Permission denied
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab$ rm file1.txt 
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab$ cd Q4/
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ touch file1.txt
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ chown abc file.txt
+chown: cannot access 'file.txt': No such file or directory
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ chown abc file1.txt
+chown: changing ownership of 'file1.txt': Operation not permitted
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ sudo !!
+sudo chown abc file1.txt
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ ls -l
+total 0
+-rw-r--r-- 1 abc rafay 0 فروری  6 00:20 file1.txt
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ touch -t timestamp
+touch: invalid date format ‘timestamp’
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ touch -t 130207111630 timestamp
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ cp -r /proc /Desktop/OSLab/Q4
+cp: cannot create directory '/Desktop/OSLab/Q4': No such file or directory
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ cp -r /proc /Desktop
+cp: cannot create directory '/Desktop': Permission denied
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ cp -r /proc/*
+cp: target '/proc/zoneinfo' is not a directory
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ cp -r /proc/4/*
+cp: target '/proc/4/wchan' is not a directory
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ mkdir deleteEmpty
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ rm deleteEmpty/
+rm: cannot remove 'deleteEmpty/': Is a directory
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ rmdir deleteEmpty/
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ mkdir -p folder/anotherFolder/AndAnother
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ rm -r folder/
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ vi file.txt
+
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ cd ..
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab$ touch Q4.txt
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab$ cd Q4/
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ vi file.txt
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ vi file.txt
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ rm file.txt
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ vi change.txt
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ chown abc change.txt 
+chown: changing ownership of 'change.txt': Operation not permitted
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ sudo !!
+sudo chown abc change.txt 
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ pid
+
+Command 'pid' not found, but there are 23 similar ones.
+
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0 225904  9672 ?        Ss   فروری05   0:07 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    فروری05   0:00 [kthreadd]
+root         4  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kworker/0
+root         6  0.0  0.0      0     0 ?        I<   فروری05   0:00 [mm_percpu
+root         7  0.0  0.0      0     0 ?        S    فروری05   0:00 [ksoftirqd
+root         8  0.1  0.0      0     0 ?        I    فروری05   0:15 [rcu_sched
+root         9  0.0  0.0      0     0 ?        I    فروری05   0:00 [rcu_bh]
+root        10  0.0  0.0      0     0 ?        S    فروری05   0:00 [migration
+root        11  0.0  0.0      0     0 ?        S    فروری05   0:00 [watchdog/
+root        12  0.0  0.0      0     0 ?        S    فروری05   0:00 [cpuhp/0]
+root        13  0.0  0.0      0     0 ?        S    فروری05   0:00 [cpuhp/1]
+root        14  0.0  0.0      0     0 ?        S    فروری05   0:00 [watchdog/
+root        15  0.0  0.0      0     0 ?        S    فروری05   0:00 [migration
+root        16  0.0  0.0      0     0 ?        S    فروری05   0:00 [ksoftirqd
+root        18  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kworker/1
+root        19  0.0  0.0      0     0 ?        S    فروری05   0:00 [cpuhp/2]
+root        20  0.0  0.0      0     0 ?        S    فروری05   0:00 [watchdog/
+root        21  0.0  0.0      0     0 ?        S    فروری05   0:00 [migration
+root        22  0.0  0.0      0     0 ?        S    فروری05   0:00 [ksoftirqd
+root        24  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kworker/2
+root        25  0.0  0.0      0     0 ?        S    فروری05   0:00 [cpuhp/3]
+root        26  0.0  0.0      0     0 ?        S    فروری05   0:00 [watchdog/
+root        27  0.0  0.0      0     0 ?        S    فروری05   0:00 [migration
+root        28  0.0  0.0      0     0 ?        S    فروری05   0:00 [ksoftirqd
+root        30  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kworker/3
+root        31  0.0  0.0      0     0 ?        S    فروری05   0:00 [kdevtmpfs
+root        32  0.0  0.0      0     0 ?        I<   فروری05   0:00 [netns]
+root        33  0.0  0.0      0     0 ?        S    فروری05   0:00 [rcu_tasks
+root        34  0.0  0.0      0     0 ?        S    فروری05   0:00 [kauditd]
+root        37  0.0  0.0      0     0 ?        S    فروری05   0:00 [khungtask
+root        38  0.0  0.0      0     0 ?        S    فروری05   0:00 [oom_reape
+root        39  0.0  0.0      0     0 ?        I<   فروری05   0:00 [writeback
+root        40  0.0  0.0      0     0 ?        S    فروری05   0:00 [kcompactd
+root        41  0.0  0.0      0     0 ?        SN   فروری05   0:00 [ksmd]
+root        42  0.0  0.0      0     0 ?        SN   فروری05   0:00 [khugepage
+root        43  0.0  0.0      0     0 ?        I<   فروری05   0:00 [crypto]
+root        44  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kintegrit
+root        45  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kblockd]
+root        48  0.0  0.0      0     0 ?        I<   فروری05   0:00 [ata_sff]
+root        49  0.0  0.0      0     0 ?        I<   فروری05   0:00 [md]
+root        50  0.0  0.0      0     0 ?        I<   فروری05   0:00 [edac-poll
+root        51  0.0  0.0      0     0 ?        I<   فروری05   0:00 [devfreq_w
+root        52  0.0  0.0      0     0 ?        I<   فروری05   0:00 [watchdogd
+root        55  0.0  0.0      0     0 ?        S    فروری05   0:00 [kswapd0]
+root        56  0.0  0.0      0     0 ?        S    فروری05   0:00 [ecryptfs-
+root        98  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kthrotld]
+root        99  0.0  0.0      0     0 ?        I<   فروری05   0:00 [acpi_ther
+root       103  0.0  0.0      0     0 ?        I<   فروری05   0:00 [ipv6_addr
+root       113  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kstrp]
+root       133  0.0  0.0      0     0 ?        I<   فروری05   0:00 [charger_m
+root       187  0.0  0.0      0     0 ?        S    فروری05   0:00 [scsi_eh_0
+root       188  0.0  0.0      0     0 ?        I<   فروری05   0:00 [scsi_tmf_
+root       189  0.0  0.0      0     0 ?        S    فروری05   0:00 [scsi_eh_1
+root       190  0.0  0.0      0     0 ?        I<   فروری05   0:00 [scsi_tmf_
+root       191  0.0  0.0      0     0 ?        S    فروری05   0:00 [scsi_eh_2
+root       192  0.0  0.0      0     0 ?        I<   فروری05   0:00 [scsi_tmf_
+root       193  0.0  0.0      0     0 ?        S    فروری05   0:00 [scsi_eh_3
+root       194  0.0  0.0      0     0 ?        I<   فروری05   0:00 [scsi_tmf_
+root       195  0.0  0.0      0     0 ?        S    فروری05   0:00 [scsi_eh_4
+root       196  0.0  0.0      0     0 ?        I<   فروری05   0:00 [scsi_tmf_
+root       197  0.0  0.0      0     0 ?        S    فروری05   0:00 [scsi_eh_5
+root       198  0.0  0.0      0     0 ?        I<   فروری05   0:00 [scsi_tmf_
+root       204  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kworker/u
+root       205  0.0  0.0      0     0 ?        S    فروری05   0:06 [i915/sign
+root       206  0.0  0.0      0     0 ?        S    فروری05   0:00 [i915/sign
+root       207  0.0  0.0      0     0 ?        S    فروری05   0:00 [i915/sign
+root       213  0.0  0.0      0     0 ?        I<   فروری05   0:01 [kworker/0
+root       246  0.0  0.0      0     0 ?        S    فروری05   0:01 [jbd2/sda7
+root       247  0.0  0.0      0     0 ?        I<   فروری05   0:00 [ext4-rsv-
+root       276  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kworker/1
+root       277  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kworker/3
+root       294  0.0  0.3 169016 56212 ?        S<s  فروری05   0:02 /lib/syste
+root       298  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kworker/2
+root       316  0.0  0.0  97704  1664 ?        Ss   فروری05   0:00 /sbin/lvme
+root       319  0.0  0.0  48020  6464 ?        Ss   فروری05   0:01 /lib/syste
+root       395  0.0  0.0      0     0 ?        S<   فروری05   0:00 [loop0]
+root       414  0.0  0.0      0     0 ?        S<   فروری05   0:00 [loop1]
+root       422  0.0  0.0      0     0 ?        S<   فروری05   0:00 [loop2]
+root       470  0.0  0.0      0     0 ?        I<   فروری05   0:00 [cfg80211]
+root       473  0.2  0.0      0     0 ?        S    فروری05   0:31 [irq/32-iw
+root       770  0.0  0.0      0     0 ?        I<   فروری05   0:00 [kworker/u
+systemd+   785  0.0  0.0 146096  3308 ?        Ssl  فروری05   0:00 /lib/syste
+systemd+   787  0.0  0.0  71600  7132 ?        Ss   فروری05   0:01 /lib/syste
+clamav     973  0.0  0.1 154140 26948 ?        Ss   فروری05   0:04 /usr/bin/f
+root       976  0.0  0.0  31644  3400 ?        Ss   فروری05   0:00 /usr/sbin/
+root       979  0.0  0.0   4552   748 ?        Ss   فروری05   0:01 /usr/sbin/
+daemon     981  0.0  0.0  28328  2460 ?        Ss   فروری05   0:00 /usr/sbin/
+root       982  0.0  0.0 473856 10980 ?        Ssl  فروری05   0:02 /usr/lib/u
+root       983  0.0  0.0 427372  9892 ?        Ssl  فروری05   0:00 /usr/sbin/
+root       985  0.6  0.0 269840  5868 ?        Dsl  فروری05   1:38 /usr/sbin/
+root       986  0.0  0.0  70660  6116 ?        Ss   فروری05   0:00 /lib/syste
+root       987  0.0  0.0 288052  7136 ?        Ssl  فروری05   0:00 /usr/lib/a
+root       997  0.0  0.0 110472  3432 ?        Ssl  فروری05   0:00 /usr/sbin/
+avahi      998  0.0  0.0  44960  3172 ?        Ss   فروری05   0:00 avahi-daem
+root      1000  0.0  0.0  36472  4204 ?        Ss   فروری05   0:00 /usr/lib/b
+root      1009  0.0  0.0 180200  9372 ?        Ssl  فروری05   0:00 /usr/sbin/
+root      1027  0.0  0.1 780428 31312 ?        Ssl  فروری05   0:02 /usr/lib/s
+syslog    1032  0.0  0.0 260736  4928 ?        Ssl  فروری05   0:00 /usr/sbin/
+message+  1034  0.0  0.0  50368  6056 ?        Ss   فروری05   0:07 /usr/bin/d
+avahi     1068  0.0  0.0  44776   328 ?        S    فروری05   0:00 avahi-daem
+root      1128  0.0  0.0  45136  7960 ?        Ss   فروری05   0:00 /sbin/wpa_
+root      1130  0.0  0.1 481920 17992 ?        Ssl  فروری05   0:04 /usr/sbin/
+root      1160  0.0  0.0 290996  8796 ?        Ssl  فروری05   0:00 /usr/lib/p
+root      1208  0.0  0.2 1801240 35008 ?       Ssl  فروری05   0:00 /usr/sbin/
+root      1220  0.0  0.0 301396  8308 ?        Ssl  فروری05   0:00 /usr/sbin/
+root      1244  0.0  0.0 248336  8100 ?        Sl   فروری05   0:00 gdm-sessio
+gdm       1257  0.0  0.0  76892  8188 ?        Ss   فروری05   0:00 /lib/syste
+gdm       1258  0.0  0.0 257620  3104 ?        S    فروری05   0:00 (sd-pam)
+mysql     1265  0.0  1.0 1415004 177184 ?      Sl   فروری05   0:09 /usr/sbin/
+gdm       1295  0.0  0.0 191012  5648 tty1     Ssl+ فروری05   0:00 /usr/lib/g
+gdm       1297  0.0  0.0  48068  4776 ?        Ss   فروری05   0:00 /usr/bin/d
+gdm       1299  0.0  0.0 552424 14092 tty1     Sl+  فروری05   0:00 /usr/lib/g
+root      1300  0.0  0.1 286912 24876 ?        Ss   فروری05   0:00 /usr/sbin/
+www-data  1302  0.0  0.0  19904   172 ?        Ss   فروری05   0:00 /usr/bin/h
+gdm       1316  0.2  0.7 3293928 121764 tty1   Sl+  فروری05   0:41 /usr/bin/g
+libvirt+  1456  0.0  0.0  49964   372 ?        S    فروری05   0:00 /usr/sbin/
+root      1457  0.0  0.0  49936   372 ?        S    فروری05   0:00 /usr/sbin/
+whoopsie  1528  0.0  0.0 390748 12676 ?        Ssl  فروری05   0:00 /usr/bin/w
+root      1677  0.0  0.0 1169932 11288 ?       Sl   فروری05   0:02 /opt/teamv
+root      1730  0.0  0.0 315780  8904 ?        Ssl  فروری05   0:00 /usr/lib/u
+root      1872  0.0  0.0  67396  3540 ?        Ss   فروری05   0:00 /usr/lib/p
+postfix   1877  0.0  0.0  69500  4840 ?        S    فروری05   0:00 qmgr -l -t
+gdm       1920  0.0  0.3 539900 52220 tty1     Sl+  فروری05   0:00 /usr/bin/X
+gdm       1953  0.0  0.0 349428  6396 ?        Ssl  فروری05   0:00 /usr/lib/a
+gdm       1958  0.0  0.0  47620  4144 ?        S    فروری05   0:00 /usr/bin/d
+gdm       1960  0.0  0.0 220756  5820 ?        Sl   فروری05   0:00 /usr/lib/a
+gdm       1964  0.0  0.0 1408884 11632 ?       Ssl  فروری05   0:00 /usr/bin/p
+rtkit     1965  0.0  0.0 183504  2960 ?        SNsl فروری05   0:00 /usr/lib/r
+gdm       1979  0.0  0.0 354676  7956 tty1     Sl   فروری05   0:00 ibus-daemo
+gdm       1982  0.0  0.0 273964  5944 tty1     Sl   فروری05   0:00 /usr/lib/i
+gdm       1984  0.0  0.1 395708 27752 tty1     Sl   فروری05   0:00 /usr/lib/i
+gdm       1987  0.0  0.0 271772  5996 ?        Sl   فروری05   0:00 /usr/lib/i
+root      1999  0.1  0.3 515600 57292 ?        Ssl  فروری05   0:17 /usr/lib/p
+gdm       2000  0.0  0.1 546540 29292 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2002  0.0  0.0 271540  5952 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2003  0.0  0.1 395324 27352 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2005  0.0  0.1 720056 30008 tty1     Sl+  فروری05   0:01 /usr/lib/g
+gdm       2007  0.0  0.0 386940 13768 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2008  0.0  0.0 276956  5328 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2011  0.0  0.1 549900 28104 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2015  0.0  0.1 918552 30332 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2017  0.0  0.0 195212  4492 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2018  0.0  0.1 923956 30236 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2019  0.0  0.0 260220  8852 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2022  0.0  0.0 195232  4640 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2025  0.0  0.0 268948  5936 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2026  0.0  0.0 298488  8492 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2032  0.0  0.0 371312  8000 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2035  0.0  0.0 326240  8032 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2039  0.0  0.1 480476 28708 tty1     Sl+  فروری05   0:00 /usr/lib/g
+gdm       2054  0.0  0.0 198104  6540 tty1     Sl   فروری05   0:00 /usr/lib/i
+colord    2082  0.0  0.0 318052 13772 ?        Ssl  فروری05   0:00 /usr/lib/c
+root      3154  0.0  0.0 402128  9000 ?        Sl   فروری05   0:00 gdm-sessio
+rafay     3212  0.0  0.0  76988  8340 ?        Ss   فروری05   0:00 /lib/syste
+rafay     3213  0.0  0.0 257620  3108 ?        S    فروری05   0:00 (sd-pam)
+rafay     3226  0.0  0.0 282836  9212 ?        SLl  فروری05   0:00 /usr/bin/g
+rafay     3230  0.0  0.0 205344  6048 tty2     Ssl+ فروری05   0:00 /usr/lib/g
+rafay     3232  2.9  0.4 352456 72408 tty2     Sl+  فروری05   7:09 /usr/lib/x
+rafay     3256  0.0  0.0  49096  5764 ?        Ss   فروری05   0:02 /usr/bin/d
+rafay     3259  0.0  0.0 708920 14952 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3360  0.0  0.0  11304   320 ?        Ss   فروری05   0:00 /usr/bin/s
+rafay     3362  0.0  0.0 349488  6404 ?        Ssl  فروری05   0:00 /usr/lib/a
+rafay     3367  0.0  0.0  47756  4076 ?        S    فروری05   0:00 /usr/bin/d
+rafay     3369  0.0  0.0 220768  6872 ?        Sl   فروری05   0:01 /usr/lib/a
+rafay     3382  0.0  0.0 285288  7232 ?        Ssl  فروری05   0:00 /usr/lib/g
+rafay     3387  0.0  0.0 416108  5324 ?        Sl   فروری05   0:00 /usr/lib/g
+rafay     3404  3.3  1.0 3829032 169512 tty2   Sl+  فروری05   8:15 /usr/bin/g
+rafay     3413  0.6  0.0 1950204 13344 ?       S<l  فروری05   1:37 /usr/bin/p
+root      3419  0.0  0.0      0     0 ?        S<   فروری05   0:00 [krfcommd]
+rafay     3430  0.1  0.0 429068  8772 tty2     Sl   فروری05   0:19 ibus-daemo
+rafay     3434  0.0  0.0 273988  6740 tty2     Sl   فروری05   0:00 /usr/lib/i
+rafay     3436  0.0  0.1 337108 20680 tty2     Sl   فروری05   0:00 /usr/lib/i
+rafay     3438  0.0  0.0 271772  6212 ?        Sl   فروری05   0:00 /usr/lib/i
+rafay     3449  0.0  0.1 689948 20332 ?        Sl   فروری05   0:00 /usr/lib/g
+rafay     3459  0.0  0.1 1365564 26568 ?       Ssl  فروری05   0:00 /usr/lib/e
+rafay     3460  0.0  0.0 467200 12404 ?        Ssl  فروری05   0:01 /usr/lib/t
+rafay     3461  0.0  0.0 373388  8684 ?        Ssl  فروری05   0:00 /usr/lib/g
+rafay     3468  0.0  0.0 269088  6148 ?        Ssl  فروری05   0:00 /usr/lib/g
+rafay     3472  0.0  0.0 282008  6644 ?        Ssl  فروری05   0:00 /usr/lib/g
+rafay     3477  0.0  0.1 767708 30928 ?        Sl   فروری05   0:00 /usr/lib/g
+rafay     3482  0.0  0.0 372028  7808 ?        Ssl  فروری05   0:00 /usr/lib/g
+rafay     3487  0.0  0.0 267260  5892 ?        Ssl  فروری05   0:00 /usr/lib/g
+rafay     3502  0.0  0.0 296572  7676 ?        Sl   فروری05   0:00 /usr/lib/g
+rafay     3507  0.0  0.1 791600 24400 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3508  0.0  0.0 342528 10452 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3510  0.0  0.0 416560  5920 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3511  0.0  0.0 268948  5936 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3516  0.0  0.0 446500 10048 tty2     Sl+  فروری05   0:01 /usr/lib/g
+rafay     3517  0.0  0.1 487948 22080 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3521  0.0  0.1 421556 20860 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3524  0.0  0.0 326260  8268 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3526  0.0  0.0 371336  8256 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3543  0.0  0.0 271564  5952 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3544  0.0  0.1 336724 20116 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3550  0.0  0.1 661400 22780 tty2     Sl+  فروری05   0:01 /usr/lib/g
+rafay     3551  0.0  0.0 463152 13736 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3555  0.0  0.0 358616  8036 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3556  0.0  0.1 491288 20596 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3557  0.0  0.1 1072776 23408 tty2    Sl+  فروری05   0:00 /usr/lib/g
+rafay     3565  0.0  0.0 271568  5948 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3597  0.0  0.9 268779832 160172 tty2 SNl+ فروری05   0:04 baloo_file
+rafay     3598  0.0  0.0 366572  7772 tty2     Sl+  فروری05   0:00 /usr/lib/x
+rafay     3603  0.6  0.7 800960 114456 tty2    Sl+  فروری05   1:37 mono /usr/
+rafay     3613  0.0  0.2 1613552 36396 tty2    SNl+ فروری05   0:02 /usr/lib/t
+rafay     3615  0.0  0.0 391280 10824 tty2     Sl+  فروری05   0:00 /usr/lib/x
+rafay     3616  0.0  0.9 1389320 161400 tty2   SLl+ فروری05   0:06 /usr/bin/g
+rafay     3617  0.0  0.3 1224752 57168 tty2    Sl+  فروری05   0:00 /usr/lib/e
+rafay     3618  0.0  0.0 271928  5912 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3625  0.0  0.0 501976 12520 tty2     Sl+  فروری05   0:00 /usr/lib/g
+rafay     3626  0.0  0.1 583528 20920 tty2     SNl+ فروری05   0:00 /usr/lib/t
+rafay     3633  0.0  0.2 570592 33548 tty2     Sl+  فروری05   0:02 /usr/lib/x
+rafay     3635  0.0  0.2 523128 38508 tty2     Sl+  فروری05   0:01 kdeconnect
+rafay     3636  0.0  0.1 687580 29956 tty2     SNl+ فروری05   0:03 /usr/lib/t
+rafay     3644  0.0  0.1 655288 31200 ?        Ssl  فروری05   0:01 /usr/lib/t
+rafay     3651  0.0  0.4 885536 67284 ?        Ssl  فروری05   0:00 /usr/lib/e
+rafay     3659  0.0  0.0 198104  6768 tty2     Sl   فروری05   0:05 /usr/lib/i
+rafay     3694  0.0  0.3 1129448 62260 ?       Sl   فروری05   0:00 /usr/lib/e
+rafay     3703  0.0  0.0 188292  5544 ?        Sl   فروری05   0:00 /usr/lib/d
+rafay     3707  0.0  0.1 726088 24720 ?        Ssl  فروری05   0:00 /usr/lib/e
+rafay     3720  0.0  0.1 945000 26880 ?        Sl   فروری05   0:00 /usr/lib/e
+rafay     3764  0.0  0.0  73244  6164 ?        S    فروری05   0:00 /usr/lib/x
+root      3769  0.0  0.1 552176 19880 ?        Ssl  فروری05   0:00 /usr/lib/f
+rafay     3770  0.0  0.0 361444  7740 ?        Sl   فروری05   0:00 /usr/lib/g
+rafay     3775  0.0  0.0 363480  7440 ?        Sl   فروری05   0:00 /usr/lib/g
+rafay     3929  0.0  0.1 581280 21488 tty2     Sl+  فروری05   0:00 update-not
+gdm       4021  0.0  0.0 187900  5056 ?        Sl   فروری05   0:00 /usr/lib/d
+rafay     4071  0.0  0.1 781052 31428 tty2     Sl+  فروری05   0:00 /usr/lib/d
+rafay     4253  0.0  0.5 2687284 85176 ?       Sl   فروری05   0:03 /usr/bin/g
+rafay     4257  0.2  0.2 756336 37188 ?        Ssl  فروری05   0:29 /usr/lib/g
+rafay     4274  3.0  1.7 2179756 291412 tty2   SLl+ فروری05   7:18 /opt/googl
+rafay     4279  0.0  0.0   7936   772 tty2     S+   فروری05   0:00 cat
+rafay     4280  0.0  0.0   7936   736 tty2     S+   فروری05   0:00 cat
+rafay     4391  0.0  0.3 433616 56448 tty2     S+   فروری05   0:00 /opt/googl
+rafay     4407  0.0  0.0  23408  5852 pts/0    Ss+  فروری05   0:00 bash
+rafay     4424  0.0  0.0  26644  4496 tty2     S+   فروری05   0:00 /opt/googl
+rafay     4427  0.0  0.0 433616 14572 tty2     S+   فروری05   0:00 /opt/googl
+rafay     4445  0.0  0.0  23540  6016 pts/1    Ss   فروری05   0:01 bash
+rafay     4514  4.4  1.4 697160 231472 tty2    Sl+  فروری05  10:37 /opt/googl
+rafay     4530  0.0  0.0 468668 14060 tty2     S+   فروری05   0:00 /opt/googl
+rafay     4847  0.0  0.4 695156 72144 tty2     Sl+  فروری05   0:00 /opt/googl
+rafay     4862  0.6  0.3 523656 50468 pts/0    Sl   فروری05   1:31 conky -c /
+rafay     5057  0.5  0.1 556236 19024 pts/0    Sl   فروری05   1:16 conky -c /
+rafay     5059  0.0  0.5 700276 81776 tty2     Sl+  فروری05   0:00 /opt/googl
+rafay     5095  0.0  0.1 250848 27772 tty2     Sl+  فروری05   0:00 /usr/bin/p
+rafay     5096  0.4  0.1 408764 19268 pts/0    Sl   فروری05   1:08 conky -c /
+rafay     5097  0.0  0.1 335052 19444 pts/0    Sl   فروری05   0:01 conky -c /
+rafay     5105  0.0  0.0 198648  7408 ?        Ssl  فروری05   0:00 /usr/lib/g
+rafay     5201  0.5  1.9 1008156 310068 tty2   Sl+  فروری05   1:21 /opt/googl
+rafay     5228  0.0  0.5 699268 83464 tty2     Sl+  فروری05   0:00 /opt/googl
+www-data  5787  0.0  0.0 286936 10708 ?        S    فروری05   0:00 /usr/sbin/
+www-data  5788  0.0  0.0 286936  7788 ?        S    فروری05   0:00 /usr/sbin/
+www-data  5789  0.0  0.0 286936  7788 ?        S    فروری05   0:00 /usr/sbin/
+www-data  5790  0.0  0.0 286936  7788 ?        S    فروری05   0:00 /usr/sbin/
+www-data  5791  0.0  0.0 286936  7788 ?        S    فروری05   0:00 /usr/sbin/
+www-data  5792  0.0  0.0 286936  7788 ?        S    فروری05   0:00 /usr/sbin/
+root      5804  0.0  0.0 100884  8048 ?        Ss   فروری05   0:00 /usr/sbin/
+root      5805  0.0  0.0 303648 10960 ?        Ssl  فروری05   0:00 /usr/sbin/
+rafay     5971  0.0  0.3 1341736 58840 ?       Sl   فروری05   0:09 /usr/bin/n
+rafay     6503  0.0  0.0 363792  7532 ?        Sl   فروری05   0:00 /usr/lib/g
+root      6517  0.0  0.0  15208  3044 ?        Ss   فروری05   0:00 /sbin/moun
+rafay     6561  0.0  0.0 374500  7536 ?        Sl   فروری05   0:00 /usr/lib/g
+rafay     6665  0.1  0.8 1022636 137684 ?      Sl   فروری05   0:26 evince /me
+rafay     6671  0.0  0.0 187732  4196 ?        Ssl  فروری05   0:00 /usr/lib/e
+rafay     6888  0.1  0.7 763228 125288 tty2    Sl+  فروری05   0:20 /opt/googl
+root      7520  0.0  0.0  59500  4228 pts/1    T    فروری05   0:00 sudo addus
+root      7521  0.0  0.0  43632  9960 pts/1    T    فروری05   0:00 adduser
+root      7530  0.0  0.0      0     0 pts/1    Z    فروری05   0:00 [passwd] <
+rafay     7943  0.0  0.0  23408  5780 pts/2    Ss+  فروری05   0:00 bash
+rafay     8237  0.2  0.7 768756 126628 tty2    Sl+  فروری05   0:26 /opt/googl
+rafay     8823  0.5  1.9 980684 311560 tty2    Sl+  فروری05   1:08 /opt/googl
+rafay     9096  0.1  0.7 763996 128480 tty2    Sl+  فروری05   0:17 /opt/googl
+rafay     9122  0.0  0.5 711360 84712 tty2     Sl+  فروری05   0:00 /opt/googl
+rafay     9138  0.0  0.5 711464 82844 tty2     Sl+  فروری05   0:00 /opt/googl
+rafay     9171  5.7  1.1 885640 185360 tty2    Sl+  فروری05  11:50 /opt/googl
+rafay     9582  0.0  0.4 697212 77132 tty2     Sl+  فروری05   0:00 /opt/googl
+rafay     9600  0.0  0.4 688504 76944 tty2     Sl+  فروری05   0:00 /opt/googl
+rafay     9611  0.0  0.4 699260 78208 tty2     Sl+  فروری05   0:00 /opt/googl
+rafay     9622  0.0  0.6 755272 110148 tty2    Sl+  فروری05   0:08 /opt/googl
+rafay     9639  0.1  0.8 783844 132948 tty2    Sl+  فروری05   0:17 /opt/googl
+rafay     9651  0.4  3.7 1301408 613520 tty2   Sl+  فروری05   0:53 /opt/googl
+rafay     9681  0.0  0.4 688656 77436 tty2     Sl+  فروری05   0:00 /opt/googl
+rafay     9692  0.0  0.4 694804 77004 tty2     Sl+  فروری05   0:00 /opt/googl
+rafay     9930  0.0  0.0 426596  9108 ?        Ssl  فروری05   0:00 /usr/bin/z
+rafay     9936  0.0  0.0 326488 16212 ?        Ssl  فروری05   0:00 /usr/lib/z
+rafay    10319  0.6  1.9 995936 316480 tty2    Sl+  فروری05   1:09 /opt/googl
+rafay    10469  0.0  0.6 728304 99508 tty2     Sl+  فروری05   0:03 /opt/googl
+rafay    12838  8.7  1.5 977632 252344 tty2    Sl+  فروری05  10:10 /opt/googl
+root     14268  0.0  0.0      0     0 ?        I    فروری05   0:00 [kworker/2
+root     14426  0.0  0.0      0     0 ?        I    فروری05   0:00 [kworker/0
+root     14671  0.0  0.0      0     0 ?        D    00:02   0:01 [kworker/u16:49]
+root     14690  0.0  0.0      0     0 ?        I    00:02   0:02 [kworker/u16:68]
+root     14696  0.0  0.0      0     0 ?        S    00:02   0:00 [irq/28-mei_me]
+root     14697  0.0  0.0      0     0 ?        S    00:02   0:00 [irq/18-mmc0]
+root     14707  0.0  0.0      0     0 ?        I    00:02   0:00 [kworker/1:3]
+root     14861  0.0  0.0  25668  6084 ?        S    00:02   0:00 /sbin/dhclient -d
+rafay    15086  8.7  1.4 965072 244104 tty2    Sl+  00:03   2:52 /opt/google/chrom
+root     15387  0.0  0.0      0     0 ?        I    00:12   0:00 [kworker/3:2]
+root     15393  0.1  0.0      0     0 ?        I    00:13   0:01 [kworker/u16:1]
+rafay    15557  0.6  0.4 698236 79132 tty2     Sl+  00:18   0:07 /opt/google/chrom
+root     15607  0.0  0.0      0     0 ?        I    00:19   0:00 [kworker/3:0]
+root     15635  0.0  0.0      0     0 ?        I    00:19   0:00 [kworker/u16:2]
+root     15895  0.0  0.0      0     0 ?        I    00:24   0:00 [kworker/2:0]
+root     16057  0.0  0.0      0     0 ?        I    00:26   0:00 [kworker/1:0]
+rafay    16127  2.6  0.8 772344 136816 tty2    Sl+  00:28   0:13 /opt/google/chrom
+root     16139  0.0  0.0      0     0 ?        I    00:28   0:00 [kworker/0:0]
+rafay    17025  1.6  0.3 379392 55392 ?        Sl   00:31   0:05 /usr/bin/python3 
+rafay    18076  0.3  0.2 672392 47164 ?        Sl   00:32   0:00 gedit /home/rafay
+root     18119  0.0  0.0      0     0 ?        I    00:33   0:00 [kworker/0:1]
+root     18120  0.0  0.0      0     0 ?        I    00:33   0:00 [kworker/2:1]
+rafay    18134  2.6  0.6 910280 110676 tty2    Sl+  00:33   0:04 /opt/google/chrom
+root     18160  0.1  0.0      0     0 ?        I    00:33   0:00 [kworker/u16:0]
+rafay    18167  3.2  0.8 754448 134948 tty2    Sl+  00:33   0:05 /opt/google/chrom
+root     18240  0.0  0.0      0     0 ?        I    00:34   0:00 [kworker/1:1]
+rafay    18316  0.5  0.5 689436 81640 tty2     Sl+  00:36   0:00 /opt/google/chrom
+rafay    18328  0.0  0.3 661868 48916 tty2     Sl+  00:36   0:00 /opt/google/chrom
+rafay    18370  0.0  0.0  37692  3468 pts/1    R+   00:36   0:00 ps aux
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ kill 15607
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ find / -name "lab"
+find: ‘/var/spool/cups’: Permission denied
+find: ‘/var/spool/postfix/flush’: Permission denied
+find: ‘/var/spool/postfix/active’: Permission denied
+find: ‘/var/spool/postfix/trace’: Permission denied
+find: ‘/var/spool/postfix/deferred’: Permission denied
+find: ‘/var/spool/postfix/saved’: Permission denied
+find: ‘/var/spool/postfix/corrupt’: Permission denied
+find: ‘/var/spool/postfix/hold’: Permission denied
+find: ‘/var/spool/postfix/bounce’: Permission denied
+find: ‘/var/spool/postfix/public’: Permission denied
+find: ‘/var/spool/postfix/incoming’: Permission denied
+find: ‘/var/spool/postfix/defer’: Permission denied
+find: ‘/var/spool/postfix/private’: Permission denied
+find: ‘/var/spool/postfix/maildrop’: Permission denied
+find: ‘/var/spool/cron/atjobs’: Permission denied
+find: ‘/var/spool/cron/crontabs’: Permission denied
+find: ‘/var/spool/cron/atspool’: Permission denied
+find: ‘/var/spool/rsyslog’: Permission denied
+find: ‘/var/log/gdm3’: Permission denied
+find: ‘/var/log/speech-dispatcher’: Permission denied
+find: ‘/var/cache/cups’: Permission denied
+find: ‘/var/cache/libvirt’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/lib/snapd/cookie’: Permission denied
+find: ‘/var/lib/snapd/cache’: Permission denied
+find: ‘/var/lib/gdm3/.gnupg’: Permission denied
+find: ‘/var/lib/gdm3/.config/pulse’: Permission denied
+find: ‘/var/lib/gdm3/.config/ibus’: Permission denied
+find: ‘/var/lib/gdm3/.local/share/sounds’: Permission denied
+find: ‘/var/lib/gdm3/.local/share/gnome-shell’: Permission denied
+find: ‘/var/lib/gdm3/.local/share/keyrings’: Permission denied
+find: ‘/var/lib/gdm3/.cache/libgweather’: Permission denied
+find: ‘/var/lib/bluetooth/C8:F7:33:66:24:47’: Permission denied
+find: ‘/var/lib/geoclue/.cache’: Permission denied
+find: ‘/var/lib/mysql-keyring’: Permission denied
+find: ‘/var/lib/fwupd/gnupg’: Permission denied
+find: ‘/var/lib/mysql’: Permission denied
+find: ‘/var/lib/colord/.cache’: Permission denied
+find: ‘/var/lib/libvirt/images’: Permission denied
+find: ‘/var/lib/libvirt/boot’: Permission denied
+find: ‘/var/lib/libvirt/qemu’: Permission denied
+find: ‘/var/lib/libvirt/sanlock’: Permission denied
+find: ‘/var/lib/udisks2’: Permission denied
+find: ‘/var/lib/apt/lists.old/partial’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/update-notifier/package-data-downloads/partial’: Permission denied
+find: ‘/var/lib/private’: Permission denied
+find: ‘/var/lib/php/sessions’: Permission denied
+find: ‘/var/lib/polkit-1’: Permission denied
+find: ‘/var/lib/lightdm’: Permission denied
+find: ‘/var/lib/mysql-files’: Permission denied
+find: ‘/var/tmp/systemd-private-377c3c23a2dd48638e8c527145619201-iio-sensor-proxy.service-DcYsBW’: Permission denied
+find: ‘/var/tmp/systemd-private-377c3c23a2dd48638e8c527145619201-systemd-resolved.service-IuxBT7’: Permission denied
+find: ‘/var/tmp/systemd-private-377c3c23a2dd48638e8c527145619201-colord.service-23IAnw’: Permission denied
+find: ‘/var/tmp/systemd-private-377c3c23a2dd48638e8c527145619201-fwupd.service-HsbuFY’: Permission denied
+find: ‘/var/tmp/systemd-private-377c3c23a2dd48638e8c527145619201-systemd-timesyncd.service-nAm0hu’: Permission denied
+find: ‘/var/tmp/systemd-private-377c3c23a2dd48638e8c527145619201-apache2.service-SsZ9wC’: Permission denied
+find: ‘/var/tmp/systemd-private-377c3c23a2dd48638e8c527145619201-rtkit-daemon.service-SHFqV5’: Permission denied
+
+
+
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ df
+Filesystem     1K-blocks      Used Available Use% Mounted on
+udev             8112200         0   8112200   0% /dev
+tmpfs            1628700      2112   1626588   1% /run
+/dev/sda7       71045512  46778976  20634564  70% /
+tmpfs            8143492    509420   7634072   7% /dev/shm
+tmpfs               5120         4      5116   1% /run/lock
+tmpfs            8143492         0   8143492   0% /sys/fs/cgroup
+/dev/loop0         35456     35456         0 100% /snap/gtk-common-themes/818
+/dev/loop2         91648     91648         0 100% /snap/core/6130
+/dev/loop1         93184     93184         0 100% /snap/core/6350
+tmpfs            1628696        20   1628676   1% /run/user/121
+tmpfs            1628696        52   1628644   1% /run/user/1000
+/dev/sda2      254587464 164590392  89997072  65% /media/rafay/46F077AFF077A3B9
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ 
+
+rafay@rafay-HP-EliteBook-Folio-9470m:~/Desktop/OSLab/Q4$ sudo service network-manager restart
+
+
+

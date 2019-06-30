@@ -1,0 +1,2 @@
+$ mkdir -p dirOSLAB/subDir/subsubdir/OSLAB2
+
